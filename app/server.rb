@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'data_mapper'
-require_relative './modals/post'
-require_relative './modals/user'
+require_relative 'modals/post'
+require_relative 'modals/user'
 
 require_relative './data_mapper_setup'
 
@@ -19,7 +19,7 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.create(name: params[:realname],
+  @user = User.create(name: params[:name],
                       username: params[:username],
                       email: params[:email],
                       password: params[:password],
